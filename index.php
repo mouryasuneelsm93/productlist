@@ -91,6 +91,7 @@ $products = array(
 	</style>
 </head>
 <body>
+	<section>
 	<table class="table table-bordered" >
 		<caption>S E C T I O N: 1</caption>
 		<tr>
@@ -116,7 +117,8 @@ $products = array(
 			}
 		?>
 	</table>
-
+	</section>
+	<section>
 	<table class="table table-bordered" >
 		<caption>S E C T I O N: 2</caption>
 		<tr>
@@ -142,7 +144,8 @@ $products = array(
 			}
 		?>
 	</table>
-
+	</section>
+	<section>
 	<table class="table table-bordered" >
 		<caption>S E C T I O N: 3</caption>
 		<tr>
@@ -172,5 +175,66 @@ $products = array(
 			}
 		?>
 	</table>
+	</section>
+	<section>
+<table class="table table-bordered">
+
+<tr><th>Category</th><th>Subcategory</th><th>Id</th><th>Name</th><th>Brand</th></tr>
+<?php  
+
+unset($products["Electronics"]["Television"][2]);
+ foreach($products as $cat=>$value)
+ {
+   
+     foreach($value as $sub_cat=>$value1)
+     {   
+        
+        foreach($value1 as $key=>$value2)
+        {
+           
+        echo "<tr><td>".$cat."</td>"."<td>".$sub_cat."</td>";
+        foreach($value2 as $key=>$value3)
+        {
+            
+            echo "<td>".$value3."</td>";    
+        }  
+    }
+     }
+ }
+
+
+?>
+</table>
+</section>
+<section>
+<table class="table table-bordered">
+
+<tr><th>Category</th><th>Subcategory</th><th>Id</th><th>Name</th><th>Brand</th></tr>
+<?php  
+$products["Electronics"]["Television"][1]['name']='BIG-555';
+unset($products["Electronics"]["Television"][2]);
+ foreach($products as $cat=>$value)
+ {
+   
+     foreach($value as $sub_cat=>$value1)
+     {   
+        
+        foreach($value1 as $key=>$value2)
+        {
+           
+        echo "<tr><td>".$cat."</td>"."<td>".$sub_cat."</td>";
+        foreach($value2 as $key=>$value3)
+        {
+            
+            echo "<td>".$value3."</td>";    
+        }  
+    }
+     }
+ }
+
+
+?>
+</table>
+</section>
 </body>
 </html>
